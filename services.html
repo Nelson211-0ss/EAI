@@ -22,6 +22,104 @@
             }
         }
     </script>
+    <style>
+        /* Smooth scroll behavior */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Modern hover animations */
+        .nav-link {
+            position: relative;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -4px;
+            left: 0;
+            background-color: #609f33;
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        /* Service card hover effects */
+        .service-card {
+            transition: all 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+
+        .service-icon {
+            transition: all 0.3s ease;
+        }
+
+        .service-card:hover .service-icon {
+            transform: scale(1.1);
+            color: #609f33;
+        }
+
+        /* Top bar hover effects */
+        .top-bar-link {
+            transition: transform 0.3s ease, color 0.3s ease;
+        }
+
+        .top-bar-link:hover {
+            transform: translateY(-1px);
+        }
+
+        .social-icon {
+            transition: transform 0.3s ease, color 0.3s ease;
+        }
+
+        .social-icon:hover {
+            transform: scale(1.1);
+        }
+
+        /* Mobile menu animation */
+        .mobile-menu {
+            transition: opacity 0.3s ease, transform 0.3s ease;
+            opacity: 0;
+            transform: translateY(-10px);
+        }
+
+        .mobile-menu.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Button hover effects */
+        .hover-lift {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .hover-lift:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 640px) {
+            .top-bar {
+                font-size: 0.75rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-container {
+                padding-left: 1rem;
+                padding-right: 1rem;
+            }
+        }
+    </style>
 </head>
 <body class="font-sans">
     <!-- Top Bar -->
@@ -29,42 +127,30 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center">
                 <div class="flex items-center space-x-4">
-                    <a href="mailto:info@eaiconsulting.com" class="flex items-center hover:text-gray-200">
+                    <a href="mailto:info@eaiconsulting.com" class="flex items-center hover:text-gray-200 top-bar-link">
                         <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
                         </svg>
-                        info@eaiconsulting.com
+                        <span class="hidden sm:inline">info@eaiconsulting.com</span>
                     </a>
-                    <a href="tel:+1234567890" class="flex items-center hover:text-gray-200">
+                    <a href="tel:+1234567890" class="flex items-center hover:text-gray-200 top-bar-link">
                         <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
                         </svg>
-                        +1 (234) 567-890
+                        <span class="hidden sm:inline">+1 (405) 589-4378</span>
                     </a>
                 </div>
                 <div class="flex items-center space-x-4">
-                    <a href="https://linkedin.com/company/eaiconsulting" target="_blank" class="hover:text-gray-200">
+                    <a href="https://linkedin.com/company/eaiconsulting" target="_blank" class="hover:text-gray-200 social-icon">
                         <span class="sr-only">LinkedIn</span>
                         <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
                             <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
                         </svg>
                     </a>
-                    <a href="https://twitter.com/eaiconsulting" target="_blank" class="hover:text-gray-200">
+                    <a href="https://twitter.com/eaiconsulting" target="_blank" class="hover:text-gray-200 social-icon">
                         <span class="sr-only">Twitter</span>
                         <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
                             <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
-                        </svg>
-                    </a>
-                    <a href="https://facebook.com/eaiconsulting" target="_blank" class="hover:text-gray-200">
-                        <span class="sr-only">Facebook</span>
-                        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
-                            <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
-                        </svg>
-                    </a>
-                    <a href="https://wa.me/1234567890" target="_blank" class="hover:text-gray-200">
-                        <span class="sr-only">WhatsApp</span>
-                        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
-                            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
                         </svg>
                     </a>
                 </div>
@@ -73,17 +159,23 @@
     </div>
 
     <!-- Navigation -->
-    <nav class="bg-white shadow-lg fixed w-full z-40" style="top: 2.5rem;">
+    <nav class="bg-white shadow-lg fixed w-full z-40 nav-container" style="top: 2.5rem;">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between h-16">
                 <div class="flex items-center">
-                    <a href="index.html" class="text-2xl font-bold text-primary">EAI Consulting</a>
+                    <a href="index.html" class="text-2xl font-bold text-primary hover:text-secondary transition-colors duration-300">EAI Consulting</a>
                 </div>
                 <div class="hidden md:flex items-center space-x-8">
-                    <a href="index.html" class="text-gray-700 hover:text-primary">Home</a>
-                    <a href="services.html" class="text-gray-700 hover:text-primary">Services</a>
-                    <a href="about.html" class="text-gray-700 hover:text-primary">About</a>
-                    <a href="contact.html" class="text-gray-700 hover:text-primary">Contact</a>
+                    <a href="index.html" class="text-gray-700 hover:text-primary nav-link">Home</a>
+                    <a href="services.html" class="text-gray-700 hover:text-primary nav-link">Services</a>
+                    <a href="about.html" class="text-gray-700 hover:text-primary nav-link">About</a>
+                    <a href="contact.html" class="text-gray-700 hover:text-primary nav-link">Contact</a>
+                    <button class="bg-primary text-white px-6 py-2 rounded-full hover:bg-secondary transition-all duration-300 hover-lift flex items-center space-x-2">
+                        <span>Consult Us</span>
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+                        </svg>
+                    </button>
                 </div>
                 <!-- Mobile menu button -->
                 <div class="md:hidden flex items-center">
@@ -106,62 +198,163 @@
         </div>
     </nav>
 
-    <!-- Page Header -->
+    <!-- Hero Section -->
     <section class="relative pt-32 pb-20 bg-gradient-to-br from-primary to-secondary text-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center">
                 <h1 class="text-4xl md:text-5xl font-bold mb-6">Our Services</h1>
-                <p class="text-xl text-white/90 max-w-3xl mx-auto">Comprehensive solutions tailored to drive innovation and sustainable growth in your business.</p>
+                <p class="text-xl text-white/90 max-w-3xl mx-auto">Comprehensive solutions to empower entrepreneurs and drive sustainable innovation.</p>
             </div>
         </div>
     </section>
 
-    <!-- Services Grid -->
+    <!-- Services Section -->
     <section class="py-20 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Service Card 1 -->
-                <div class="bg-gray-50 rounded-xl shadow-md hover:shadow-xl transition-shadow duration-300">
-                    <div class="p-6">
-                        <div class="w-12 h-12 bg-secondary/10 rounded-lg flex items-center justify-center mb-6">
-                            <svg class="w-6 h-6 text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
-                            </svg>
+                <!-- Business Development and Execution -->
+                <div class="service-card bg-white p-6 rounded-xl shadow-lg border border-gray-100">
+                    <div class="service-icon w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-6">
+                        <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4 text-primary">Business Development and Execution</h3>
+                    <p class="text-gray-600">From strategic planning to implementation, we help turn ideas into sustainable ventures.</p>
+                </div>
+
+                <!-- Community Ecosystem Development -->
+                <div class="service-card bg-white p-6 rounded-xl shadow-lg border border-gray-100">
+                    <div class="service-icon w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-6">
+                        <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4 text-primary">Community Ecosystem Development</h3>
+                    <p class="text-gray-600">Supporting communities in building environments that foster entrepreneurship, innovation, and inclusive economic development.</p>
+                </div>
+
+                <!-- Entrepreneurship and Agripreneurship Training -->
+                <div class="service-card bg-white p-6 rounded-xl shadow-lg border border-gray-100">
+                    <div class="service-icon w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-6">
+                        <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4 text-primary">Entrepreneurship and Agripreneurship Training</h3>
+                    <p class="text-gray-600">Equipping individuals and communities with the tools to launch and grow impactful enterprises, with a focus on agriculture and food systems.</p>
+                </div>
+
+                <!-- Evaluation and Learning Strategy -->
+                <div class="service-card bg-white p-6 rounded-xl shadow-lg border border-gray-100">
+                    <div class="service-icon w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-6">
+                        <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4 text-primary">Evaluation and Learning Strategy</h3>
+                    <p class="text-gray-600">Designing evaluation systems that foster continuous learning, reflection, and evidence-based decision-making.</p>
+                </div>
+
+                <!-- Individual Business Consultation -->
+                <div class="service-card bg-white p-6 rounded-xl shadow-lg border border-gray-100">
+                    <div class="service-icon w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-6">
+                        <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4 text-primary">Individual Business Consultation</h3>
+                    <p class="text-gray-600">Offering one-on-one guidance to help entrepreneurs overcome challenges and scale their ventures.</p>
+                </div>
+
+                <!-- Program Design and Curriculum Development -->
+                <div class="service-card bg-white p-6 rounded-xl shadow-lg border border-gray-100">
+                    <div class="service-icon w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-6">
+                        <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4 text-primary">Program Design and Curriculum Development</h3>
+                    <p class="text-gray-600">Creating tailored learning experiences and training modules to empower current and future innovators.</p>
+                </div>
+
+                <!-- Strategic Planning and Organizational Assessment -->
+                <div class="service-card bg-white p-6 rounded-xl shadow-lg border border-gray-100">
+                    <div class="service-icon w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-6">
+                        <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4 text-primary">Strategic Planning and Organizational Assessment</h3>
+                    <p class="text-gray-600">Guiding organizations through goal setting, strategic alignment, and performance measurement.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mission-Aligned Projects Section -->
+    <section class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4 text-primary">Mission-Aligned Projects</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">Aligned with our commitment to empowerment, access, and innovation, we reinvest a portion of our time and revenue into impactful initiatives.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+                <!-- Pro Bono Services -->
+                <div class="relative group overflow-hidden rounded-xl shadow-lg hover:shadow-xl transition-all duration-300">
+                    <div class="aspect-w-16 aspect-h-9">
+                        <img src="https://images.unsplash.com/photo-1593113598332-cd288d649433?auto=format&fit=crop&q=80" alt="Pro Bono Services" class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300">
+                    </div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/50 to-transparent">
+                        <div class="absolute bottom-0 p-6">
+                            <h3 class="text-xl font-bold text-white mb-2">Pro Bono Services</h3>
+                            <p class="text-white/90">Providing sliding-scale services for underserved communities to ensure access to quality consulting and support.</p>
                         </div>
-                        <h3 class="text-xl font-semibold mb-3 text-primary">Strategic Planning</h3>
-                        <p class="text-gray-600 mb-4">Develop comprehensive business strategies aligned with your goals and market opportunities.</p>
-                        <ul class="space-y-2 text-gray-600 mb-6">
-                            <li class="flex items-center">
-                                <svg class="w-5 h-5 mr-2 text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
-                                </svg>
-                                Market Analysis
-                            </li>
-                            <li class="flex items-center">
-                                <svg class="w-5 h-5 mr-2 text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
-                                </svg>
-                                Growth Strategy
-                            </li>
-                            <li class="flex items-center">
-                                <svg class="w-5 h-5 mr-2 text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
-                                </svg>
-                                Risk Assessment
-                            </li>
-                        </ul>
-                        <a href="contact.html" class="inline-flex items-center text-secondary hover:text-secondary/80 font-medium">
-                            Learn More
-                            <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
-                            </svg>
-                        </a>
                     </div>
                 </div>
 
-                <!-- Additional Service Cards with similar structure -->
-                <!-- ... existing service cards ... -->
+                <!-- Rural & Youth Entrepreneurship -->
+                <div class="relative group overflow-hidden rounded-xl shadow-lg hover:shadow-xl transition-all duration-300">
+                    <div class="aspect-w-16 aspect-h-9">
+                        <img src="https://images.unsplash.com/photo-1531545514256-b1400bc00f31?auto=format&fit=crop&q=80" alt="Rural & Youth Entrepreneurship" class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300">
+                    </div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/50 to-transparent">
+                        <div class="absolute bottom-0 p-6">
+                            <h3 class="text-xl font-bold text-white mb-2">Rural & Youth Entrepreneurship</h3>
+                            <p class="text-white/90">Empowering the next generation of rural entrepreneurs through specialized training programs.</p>
+                        </div>
+                    </div>
+                </div>
 
+                <!-- Capacity Building Partnerships -->
+                <div class="relative group overflow-hidden rounded-xl shadow-lg hover:shadow-xl transition-all duration-300">
+                    <div class="aspect-w-16 aspect-h-9">
+                        <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&q=80" alt="Capacity Building Partnerships" class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300">
+                    </div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/50 to-transparent">
+                        <div class="absolute bottom-0 p-6">
+                            <h3 class="text-xl font-bold text-white mb-2">Capacity Building Partnerships</h3>
+                            <p class="text-white/90">Collaborating with mission-aligned organizations to create lasting impact in communities.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white p-8 rounded-2xl shadow-lg">
+                <div class="max-w-3xl mx-auto text-center">
+                    <div class="inline-flex items-center justify-center w-16 h-16 bg-secondary/10 rounded-full mb-6">
+                        <svg class="w-8 h-8 text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                        </svg>
+                    </div>
+                    <p class="text-lg text-gray-700 italic mb-6">"This hybrid model allows us to remain financially sustainable while maximizing our social impact."</p>
+                    <div class="flex flex-wrap justify-center gap-4">
+                        <span class="px-4 py-2 bg-primary/10 text-primary rounded-full text-sm font-medium">Sustainable Growth</span>
+                        <span class="px-4 py-2 bg-secondary/10 text-secondary rounded-full text-sm font-medium">Social Impact</span>
+                        <span class="px-4 py-2 bg-primary/10 text-primary rounded-full text-sm font-medium">Community Development</span>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -169,8 +362,8 @@
     <!-- CTA Section -->
     <section class="py-20 bg-gradient-to-br from-primary to-secondary text-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 class="text-3xl md:text-4xl font-bold mb-6">Ready to Transform Your Business?</h2>
-            <p class="text-xl mb-8 max-w-2xl mx-auto">Let's work together to create innovative solutions that drive real results.</p>
+            <h2 class="text-3xl md:text-4xl font-bold mb-6">Ready to Transform Your Vision?</h2>
+            <p class="text-xl mb-8 max-w-2xl mx-auto">Let's work together to create innovative solutions that drive real change.</p>
             <a href="contact.html" class="inline-block bg-white text-primary px-8 py-3 rounded-full font-semibold hover:bg-gray-100 transition duration-300 shadow-lg hover:shadow-xl">
                 Get Started Today
             </a>
@@ -180,246 +373,66 @@
     <!-- Footer -->
     <footer class="bg-gray-900 text-white py-12">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <!-- Main Footer Content -->
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
-                <!-- Company Info -->
-                <div class="space-y-6">
-                    <div>
-                        <h3 class="text-2xl font-bold text-white mb-2">EAI Consulting</h3>
-                        <p class="text-gray-400 leading-relaxed">Bridging Entrepreneurial Insight and Innovation to drive Sustainable Growth and Impact.</p>
-                    </div>
-                    <!-- Social Links -->
-                    <div class="flex space-x-4">
-                        <a href="#" class="text-gray-400 hover:text-white transition-colors duration-300">
-                            <span class="sr-only">LinkedIn</span>
-                            <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
-                                <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
-                            </svg>
-                        </a>
-                        <a href="#" class="text-gray-400 hover:text-white transition-colors duration-300">
-                            <span class="sr-only">Twitter</span>
-                            <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
-                                <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
-                            </svg>
-                        </a>
-                        <a href="#" class="text-gray-400 hover:text-white transition-colors duration-300">
-                            <span class="sr-only">Facebook</span>
-                            <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
-                                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
-                            </svg>
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Quick Links -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <div>
-                    <h4 class="text-lg font-semibold mb-6 text-white">Quick Links</h4>
-                    <ul class="space-y-4">
-                        <li>
-                            <a href="index.html" class="text-gray-400 hover:text-white transition-colors duration-300 flex items-center">
-                                <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
-                                    <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/>
-                                </svg>
-                                Home
-                            </a>
-                        </li>
-                        <li>
-                            <a href="services.html" class="text-gray-400 hover:text-white transition-colors duration-300 flex items-center">
-                                <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
-                                    <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/>
-                                </svg>
-                                Services
-                            </a>
-                        </li>
-                        <li>
-                            <a href="about.html" class="text-gray-400 hover:text-white transition-colors duration-300 flex items-center">
-                                <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
-                                    <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/>
-                                </svg>
-                                About
-                            </a>
-                        </li>
-                        <li>
-                            <a href="contact.html" class="text-gray-400 hover:text-white transition-colors duration-300 flex items-center">
-                                <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
-                                    <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/>
-                                </svg>
-                                Contact
-                            </a>
-                        </li>
+                    <h3 class="text-2xl font-bold mb-4">EAI Consulting</h3>
+                    <p class="text-gray-400">Bridging Entrepreneurial Insight and Innovation to drive Sustainable Growth and Impact.</p>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="text-gray-400 hover:text-white">Home</a></li>
+                        <li><a href="services.html" class="text-gray-400 hover:text-white">Services</a></li>
+                        <li><a href="about.html" class="text-gray-400 hover:text-white">About</a></li>
+                        <li><a href="contact.html" class="text-gray-400 hover:text-white">Contact</a></li>
                     </ul>
                 </div>
-
-                <!-- Services -->
                 <div>
-                    <h4 class="text-lg font-semibold mb-6 text-white">Our Services</h4>
-                    <ul class="space-y-4">
-                        <li>
-                            <a href="#" class="text-gray-400 hover:text-white transition-colors duration-300 flex items-center">
-                                <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
-                                    <path d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z"/>
-                                </svg>
-                                Business Development
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#" class="text-gray-400 hover:text-white transition-colors duration-300 flex items-center">
-                                <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
-                                    <path d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z"/>
-                                </svg>
-                                Agricultural Innovation
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#" class="text-gray-400 hover:text-white transition-colors duration-300 flex items-center">
-                                <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
-                                    <path d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z"/>
-                                </svg>
-                                Impact Assessment
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-
-                <!-- Contact Info -->
-                <div>
-                    <h4 class="text-lg font-semibold mb-6 text-white">Contact Us</h4>
-                    <ul class="space-y-4">
-                        <li class="flex items-start">
-                            <svg class="w-6 h-6 mr-3 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
-                            </svg>
-                            <span class="text-gray-400">info@eaiconsulting.com</span>
-                        </li>
-                        <li class="flex items-start">
-                            <svg class="w-6 h-6 mr-3 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
-                            </svg>
-                            <span class="text-gray-400">+1 (555) 123-4567</span>
-                        </li>
-                        <li class="flex items-start">
-                            <svg class="w-6 h-6 mr-3 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
-                            </svg>
-                            <div class="text-gray-400">
-                                123 Business Street,<br>
-                                Suite 100<br>
-                                City, State 12345
-                            </div>
-                        </li>
+                    <h4 class="text-lg font-semibold mb-4">Contact Info</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li>info@eaiconsulting.com</li>
+                        <li>+1 (405) 589-4378</li>
+                        <li>123 Business Street, Suite 100<br>City, State 12345</li>
                     </ul>
                 </div>
             </div>
-
-            <!-- Bottom Bar -->
-            <div class="border-t border-gray-800 pt-8">
-                <div class="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-                    <p class="text-gray-400 text-sm">&copy; 2024 EAI Consulting. All rights reserved.</p>
-                    <div class="flex space-x-6">
-                        <a href="#" class="text-gray-400 hover:text-white text-sm transition-colors duration-300">Privacy Policy</a>
-                        <a href="#" class="text-gray-400 hover:text-white text-sm transition-colors duration-300">Terms of Service</a>
-                        <a href="#" class="text-gray-400 hover:text-white text-sm transition-colors duration-300">Cookie Policy</a>
-                    </div>
-                </div>
+            <div class="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400">
+                <p>&copy; 2024 EAI Consulting. All rights reserved.</p>
             </div>
         </div>
     </footer>
 
-    <!-- Floating Contact Button -->
-    <button id="contact-button" class="fixed bottom-8 right-8 bg-secondary hover:bg-secondary/90 text-white px-6 py-3 rounded-full font-semibold shadow-lg hover:shadow-xl transition-all duration-300 flex items-center space-x-2 z-50">
-        <span>Consult Us</span>
-        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7"/>
-        </svg>
-    </button>
-
-    <!-- Contact Options Panel -->
-    <div id="contact-options" class="fixed bottom-0 right-8 transform translate-y-full transition-transform duration-300 ease-in-out z-50 bg-white rounded-t-xl shadow-2xl w-72">
-        <div class="p-4 border-b border-gray-200 flex justify-between items-center">
-            <h3 class="text-lg font-semibold text-gray-800">Contact Us</h3>
-            <button id="contact-close" class="text-gray-500 hover:text-gray-700">
-                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
-                </svg>
-            </button>
-        </div>
-        <div class="p-4 space-y-3">
-            <a href="https://wa.me/1234567890" target="_blank" class="flex items-center space-x-3 p-3 rounded-lg hover:bg-gray-50 transition-colors duration-200">
-                <div class="w-10 h-10 flex items-center justify-center rounded-full bg-green-500 text-white">
-                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
-                    </svg>
-                </div>
-                <span class="text-gray-700">WhatsApp</span>
-            </a>
-            <a href="https://facebook.com/eaiconsulting" target="_blank" class="flex items-center space-x-3 p-3 rounded-lg hover:bg-gray-50 transition-colors duration-200">
-                <div class="w-10 h-10 flex items-center justify-center rounded-full bg-blue-600 text-white">
-                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
-                    </svg>
-                </div>
-                <span class="text-gray-700">Facebook</span>
-            </a>
-            <a href="mailto:info@eaiconsulting.com" class="flex items-center space-x-3 p-3 rounded-lg hover:bg-gray-50 transition-colors duration-200">
-                <div class="w-10 h-10 flex items-center justify-center rounded-full bg-red-500 text-white">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
-                    </svg>
-                </div>
-                <span class="text-gray-700">Email</span>
-            </a>
-            <a href="tel:+1234567890" class="flex items-center space-x-3 p-3 rounded-lg hover:bg-gray-50 transition-colors duration-200">
-                <div class="w-10 h-10 flex items-center justify-center rounded-full bg-primary text-white">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
-                    </svg>
-                </div>
-                <span class="text-gray-700">Call</span>
-            </a>
-        </div>
-    </div>
-
     <script>
-        // Mobile menu toggle
+        // Mobile menu toggle with animation
         const mobileMenuButton = document.querySelector('.mobile-menu-button');
         const mobileMenu = document.querySelector('.mobile-menu');
 
         mobileMenuButton.addEventListener('click', () => {
             mobileMenu.classList.toggle('hidden');
+            mobileMenu.classList.toggle('show');
         });
 
         // Close mobile menu when clicking a link
         const mobileLinks = document.querySelectorAll('.mobile-menu a');
         mobileLinks.forEach(link => {
             link.addEventListener('click', () => {
+                mobileMenu.classList.remove('show');
                 mobileMenu.classList.add('hidden');
             });
         });
 
-        // Contact options toggle
-        document.addEventListener('DOMContentLoaded', () => {
-            const contactButton = document.getElementById('contact-button');
-            const contactOptions = document.getElementById('contact-options');
-            const contactClose = document.getElementById('contact-close');
-
-            contactButton.addEventListener('click', () => {
-                contactOptions.classList.toggle('translate-y-full');
-                contactButton.classList.toggle('hidden');
-            });
-
-            contactClose.addEventListener('click', () => {
-                contactOptions.classList.add('translate-y-full');
-                contactButton.classList.remove('hidden');
-            });
-
-            // Close contact options when clicking outside
-            document.addEventListener('click', (e) => {
-                if (!contactOptions.contains(e.target) && !contactButton.contains(e.target)) {
-                    contactOptions.classList.add('translate-y-full');
-                    contactButton.classList.remove('hidden');
-                }
-            });
+        // Add scroll behavior
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('nav');
+            const topBar = document.querySelector('.top-bar');
+            
+            if (window.scrollY > 100) {
+                nav.classList.add('shadow-lg');
+                topBar.classList.add('opacity-90');
+            } else {
+                nav.classList.remove('shadow-lg');
+                topBar.classList.remove('opacity-90');
+            }
         });
     </script>
 </body>
