@@ -377,7 +377,7 @@
                     <div class="text-gray-600">Countries Served</div>
                 </div>
                 <div class="text-center">
-                    <div class="text-4xl font-bold text-primary mb-2">85%</div>
+                    <div class="text-4xl font-bold text-primary mb-2">95%</div>
                     <div class="text-gray-600">Client Satisfaction</div>
                 </div>
             </div>
@@ -509,21 +509,9 @@
             const updateCounter = () => {
                 current += increment;
                 if (current >= target) {
-                    element.textContent = target;
-                    if (element.nextElementSibling?.classList.contains('percentage')) {
-                        element.textContent += '%';
-                    }
-                    if (element.nextElementSibling?.classList.contains('plus')) {
-                        element.textContent += '+';
-                    }
+                    element.textContent = Math.floor(target);
                 } else {
                     element.textContent = Math.floor(current);
-                    if (element.nextElementSibling?.classList.contains('percentage')) {
-                        element.textContent += '%';
-                    }
-                    if (element.nextElementSibling?.classList.contains('plus')) {
-                        element.textContent += '+';
-                    }
                     requestAnimationFrame(updateCounter);
                 }
             };
@@ -551,10 +539,10 @@
             });
         }, observerOptions);
 
-        // Start observing the stats section
-        const statsSection = document.querySelector('.stats-section');
-        if (statsSection) {
-            counterObserver.observe(statsSection);
+        // Start observing the hero section
+        const heroSection = document.querySelector('.relative.min-h-screen');
+        if (heroSection) {
+            counterObserver.observe(heroSection);
         }
 
         // Contact options toggle
