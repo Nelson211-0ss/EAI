@@ -459,12 +459,15 @@
 
             <!-- Copyright -->
             <div class="border-t border-white/20 mt-12 pt-8 text-center text-white/60">
-                <p>&copy; 2024 EAI Consulting. All rights reserved.</p>
+                <p>&copy; <span id="current-year"></span> EAI Consulting. All rights reserved.</p>
             </div>
         </div>
     </footer>
 
     <script>
+        // Update copyright year automatically
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+        
         // Mobile menu toggle with animation
         const mobileMenuButton = document.querySelector('.mobile-menu-button');
         const mobileMenu = document.querySelector('.mobile-menu');
