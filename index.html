@@ -41,6 +41,51 @@
             opacity: 0;
         }
 
+        /* Scroll Animation Classes */
+        .scroll-fade {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+
+        .scroll-fade.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .scroll-slide-left {
+            opacity: 0;
+            transform: translateX(-50px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+
+        .scroll-slide-left.active {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .scroll-slide-right {
+            opacity: 0;
+            transform: translateX(50px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+
+        .scroll-slide-right.active {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .scroll-scale {
+            opacity: 0;
+            transform: scale(0.95);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+
+        .scroll-scale.active {
+            opacity: 1;
+            transform: scale(1);
+        }
+
         /* Smooth scroll behavior */
         html {
             scroll-behavior: smooth;
@@ -219,7 +264,7 @@
     </nav>
 
     <!-- Hero Section -->
-    <section class="relative min-h-screen pt-24 overflow-hidden">
+    <section class="relative min-h-screen pt-24 overflow-hidden scroll-fade">
         <!-- Background Image with Overlay -->
         <div class="absolute inset-0">
             <img src="images/backherosection.jpg" alt="Innovation Background" class="w-full h-full object-cover filter brightness-75" />
@@ -325,7 +370,7 @@
     <!-- Overview Section -->
     <section class="py-20 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
+            <div class="text-center mb-16 scroll-fade">
                 <h2 class="text-3xl md:text-4xl font-bold mb-4 text-primary">Empowering Change Through Innovation</h2>
                 <p class="text-xl text-gray-600 max-w-3xl mx-auto">We specialize in entrepreneurial capacity building and agricultural innovation solutions that catalyze sustainable impact across sectors.</p>
             </div>
@@ -387,39 +432,41 @@
     </section>
 
     <!-- Testimonials Section -->
-    <section class="py-20 bg-white">
+    <section class="py-20 bg-gray-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-gray-800">What Our Clients Say</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="bg-gray-50 p-6 rounded-lg shadow-md">
-                    <div class="mb-4 flex items-center">
-                        <img src="images/testimonial1.jpg" alt="Sarah Johnson" class="w-16 h-16 rounded-full object-cover mr-4">
-                        <div>
-                            <div class="font-semibold text-gray-800">Sarah Johnson</div>
-                            <div class="text-sm text-gray-500">Agricultural Cooperative Director</div>
+            <div class="text-center mb-16 scroll-fade">
+                <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-gray-800">What Our Clients Say</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="bg-gray-50 p-6 rounded-lg shadow-md">
+                        <div class="mb-4 flex items-center">
+                            <img src="images/testimonial1.jpg" alt="Sarah Johnson" class="w-16 h-16 rounded-full object-cover mr-4">
+                            <div>
+                                <div class="font-semibold text-gray-800">Sarah Johnson</div>
+                                <div class="text-sm text-gray-500">Agricultural Cooperative Director</div>
+                            </div>
                         </div>
+                        <p class="text-gray-600 mb-4">"EAI Consulting's expertise in agricultural innovation has transformed our farming practices, leading to sustainable growth and improved yields."</p>
                     </div>
-                    <p class="text-gray-600 mb-4">"EAI Consulting's expertise in agricultural innovation has transformed our farming practices, leading to sustainable growth and improved yields."</p>
-                </div>
-                <div class="bg-gray-50 p-6 rounded-lg shadow-md">
-                    <div class="mb-4 flex items-center">
-                        <img src="images/testimonial2.jpg" alt="Michael Chen" class="w-16 h-16 rounded-full object-cover mr-4">
-                        <div>
-                            <div class="font-semibold text-gray-800">Michael Chen</div>
-                            <div class="text-sm text-gray-500">Tech Startup Founder</div>
+                    <div class="bg-gray-50 p-6 rounded-lg shadow-md">
+                        <div class="mb-4 flex items-center">
+                            <img src="images/testimonial2.jpg" alt="Michael Chen" class="w-16 h-16 rounded-full object-cover mr-4">
+                            <div>
+                                <div class="font-semibold text-gray-800">Michael Chen</div>
+                                <div class="text-sm text-gray-500">Tech Startup Founder</div>
+                            </div>
                         </div>
+                        <p class="text-gray-600 mb-4">"The entrepreneurial capacity building program helped me develop crucial skills and strategies to scale my business effectively."</p>
                     </div>
-                    <p class="text-gray-600 mb-4">"The entrepreneurial capacity building program helped me develop crucial skills and strategies to scale my business effectively."</p>
-                </div>
-                <div class="bg-gray-50 p-6 rounded-lg shadow-md">
-                    <div class="mb-4 flex items-center">
-                        <img src="images/testimonial3.jpg" alt="Emma Rodriguez" class="w-16 h-16 rounded-full object-cover mr-4">
-                        <div>
-                            <div class="font-semibold text-gray-800">Emma Rodriguez</div>
-                            <div class="text-sm text-gray-500">NGO Program Director</div>
+                    <div class="bg-gray-50 p-6 rounded-lg shadow-md">
+                        <div class="mb-4 flex items-center">
+                            <img src="images/testimonial3.jpg" alt="Emma Rodriguez" class="w-16 h-16 rounded-full object-cover mr-4">
+                            <div>
+                                <div class="font-semibold text-gray-800">Emma Rodriguez</div>
+                                <div class="text-sm text-gray-500">NGO Program Director</div>
+                            </div>
                         </div>
+                        <p class="text-gray-600 mb-4">"Their impact assessment methodology helped us measure and optimize our social initiatives with precision and clarity."</p>
                     </div>
-                    <p class="text-gray-600 mb-4">"Their impact assessment methodology helped us measure and optimize our social initiatives with precision and clarity."</p>
                 </div>
             </div>
         </div>
@@ -430,7 +477,7 @@
         <div class="absolute inset-0 z-0">
             <img src="images/backherosection.jpg" alt="Call to Action Background" class="w-full h-full object-cover opacity-20">
         </div>
-        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center scroll-fade">
             <h2 class="text-3xl md:text-4xl font-bold mb-6">Ready to Transform Your Business?</h2>
             <p class="text-xl mb-8 max-w-2xl mx-auto">Let's work together to create sustainable solutions that drive real change.</p>
             <a href="contact.html" class="inline-block bg-white text-primary px-8 py-3 rounded-full font-semibold hover:bg-gray-100 transition duration-300">Start Your Journey</a>
@@ -594,6 +641,43 @@
     <script>
         // Update copyright year automatically
         document.getElementById('current-year').textContent = new Date().getFullYear();
+
+        // Scroll Animation Observer
+        const scrollElements = document.querySelectorAll('.scroll-fade, .scroll-slide-left, .scroll-slide-right, .scroll-scale');
+
+        const elementInView = (el, percentageScroll = 100) => {
+            const elementTop = el.getBoundingClientRect().top;
+            return (
+                elementTop <= 
+                ((window.innerHeight || document.documentElement.clientHeight) * (percentageScroll/100))
+            );
+        };
+
+        const displayScrollElement = (element) => {
+            element.classList.add('active');
+        };
+
+        const hideScrollElement = (element) => {
+            element.classList.remove('active');
+        };
+
+        const handleScrollAnimation = () => {
+            scrollElements.forEach((el) => {
+                if (elementInView(el, 100)) {
+                    displayScrollElement(el);
+                } else {
+                    hideScrollElement(el);
+                }
+            });
+        };
+
+        // Initialize scroll animations
+        window.addEventListener('scroll', () => {
+            handleScrollAnimation();
+        });
+
+        // Initial check for elements in view
+        handleScrollAnimation();
 
         // Mobile menu toggle with animation
         const mobileMenuButton = document.querySelector('.mobile-menu-button');
